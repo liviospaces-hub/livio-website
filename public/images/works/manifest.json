@@ -1,0 +1,123 @@
+{
+  "nadapuram-kozhikode": {
+    "number": "01",
+    "title": "Residence at Nadapuram",
+    "location": "Nadapuram, Kozhikode",
+    "image": "/images/works/nadapuram-kozhikode/01.jpg",
+    "images": [
+      "/images/works/nadapuram-kozhikode/01.jpg"
+    ],
+    "src": "Nadapuram.jpg",
+    "kb": 580
+  },
+  "kanjirappally-kottayam": {
+    "number": "02",
+    "title": "Residence at Kanjirappally",
+    "location": "Kanjirappally, Kottayam",
+    "image": "/images/works/kanjirappally-kottayam/01.jpg",
+    "images": [
+      "/images/works/kanjirappally-kottayam/01.jpg"
+    ],
+    "src": "elevation out.jpg",
+    "kb": 377
+  },
+  "kothamangalam-ernakulam": {
+    "number": "03",
+    "title": "Residence at Kothamangalam",
+    "location": "Kothamangalam, Ernakulam",
+    "image": "/images/works/kothamangalam-ernakulam/01.jpg",
+    "images": [
+      "/images/works/kothamangalam-ernakulam/01.jpg"
+    ],
+    "src": "Nellimattam 2.jpg",
+    "kb": 614
+  },
+  "nadapuram-kozhikode-2": {
+    "number": "04",
+    "title": "Residence at Nadapuram",
+    "location": "Nadapuram, Kozhikode",
+    "image": "/images/works/nadapuram-kozhikode-2/01.jpg",
+    "images": [
+      "/images/works/nadapuram-kozhikode-2/01.jpg"
+    ],
+    "src": "IMG_0034.JPG",
+    "kb": 416
+  },
+  "muvattupuzha-ernakulam": {
+    "number": "05",
+    "title": "Residence at Muvattupuzha",
+    "location": "Muvattupuzha, Ernakulam",
+    "image": "/images/works/muvattupuzha-ernakulam/01.jpg",
+    "images": [
+      "/images/works/muvattupuzha-ernakulam/01.jpg"
+    ],
+    "src": "Edit.jpg",
+    "kb": 455
+  },
+  "kothamangalam-ernakulam-2": {
+    "number": "06",
+    "title": "Residence at Kothamangalam",
+    "location": "Kothamangalam, Ernakulam",
+    "image": "/images/works/kothamangalam-ernakulam-2/01.jpg",
+    "images": [
+      "/images/works/kothamangalam-ernakulam-2/01.jpg"
+    ],
+    "src": "Elevation 01.jpg",
+    "kb": 149
+  },
+  "perumbavoor-ernakulam": {
+    "number": "07",
+    "title": "Residence at Perumbavoor",
+    "location": "Perumbavoor, Ernakulam",
+    "image": "/images/works/perumbavoor-ernakulam/01.png",
+    "images": [
+      "/images/works/perumbavoor-ernakulam/01.png"
+    ],
+    "src": "IMG_5941.JPG",
+    "kb": 177
+  },
+  "perumbavoor-ernakulam-2": {
+    "number": "08",
+    "title": "Residence at Perumbavoor",
+    "location": "Perumbavoor, Ernakulam",
+    "image": "/images/works/perumbavoor-ernakulam-2/01.jpg",
+    "images": [
+      "/images/works/perumbavoor-ernakulam-2/01.jpg"
+    ],
+    "src": "EXTERIOR .jpg",
+    "kb": 360
+  },
+  "aluva-ernakulam": {
+    "number": "09",
+    "title": "Residence at Aluva",
+    "location": "Aluva, Ernakulam",
+    "image": "/images/works/aluva-ernakulam/01.jpg",
+    "images": [
+      "/images/works/aluva-ernakulam/01.jpg"
+    ],
+    "src": "new 3d.jpg",
+    "kb": 457
+  },
+  "aluva-ernakulam-2": {
+    "number": "10",
+    "title": "Residence at Aluva",
+    "location": "Aluva, Ernakulam",
+    "image": "/images/works/aluva-ernakulam-2/01.jpg",
+    "images": [
+      "/images/works/aluva-ernakulam-2/01.jpg"
+    ],
+    "src": "SHEEJA IBRAHIM 3D 1.jpg",
+    "kb": 620
+  },
+  "kothamangalam-ernakulam-3": {
+    "number": "11",
+    "title": "Residence at Kothamangalam",
+    "location": "Kothamangalam, Ernakulam",
+    "image": "/images/works/kothamangalam-ernakulam-3/01.jpg",
+    "images": [
+      "/images/works/kothamangalam-ernakulam-3/01.jpg"
+    ],
+    "src": "kochi final.png",
+    "kb": 474
+  }
+}
