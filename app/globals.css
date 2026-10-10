@@ -1,0 +1,180 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Livio brand tokens */
+  --color-background: #e8ddc9;
+  --color-foreground: #3d2a22;
+  --color-primary: #a8532e;
+  --color-primary-foreground: #f3ebe0;
+  --color-secondary: #e8ddc9;
+  --color-secondary-foreground: #a8532e;
+  --color-muted: #8a6a58;
+  --color-muted-foreground: #c4b5a4;
+  --color-accent: #a8532e;
+  --color-accent-foreground: #f3ebe0;
+  --color-border: rgba(168, 83, 46, 0.2);
+
+  --color-terracotta: #a8532e;
+  --color-terracotta-deep: #8f4324;
+  --color-cream: #e8ddc9;
+  --color-cream-soft: #f3ebe0;
+  --color-ink: #3d2a22;
+}
+
+html {
+  /* Chrome scroll anchoring fights pin spacers and moves scroll on its own. */
+  overflow-anchor: none;
+}
+
+body {
+  color: var(--color-foreground);
+  background: var(--color-terracotta);
+  font-family: var(--font-inter), system-ui, sans-serif;
+  max-width: 100%;
+  overflow-anchor: none;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Titles — Space Mono (overrides any stale display-font utility) */
+.font-display {
+  font-family: var(--font-space-mono), ui-monospace, monospace;
+}
+
+h1,
+h2,
+h3,
+.hero-v2-title {
+  text-transform: uppercase;
+}
+
+@keyframes sheen {
+  0% {
+    transform: translateX(-120%) skewX(-18deg);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(220%) skewX(-18deg);
+    opacity: 0;
+  }
+}
+
+.animate-sheen {
+  animation: sheen 0.85s ease-in-out forwards;
+}
+
+/* Moving gradient on “Creativity” — brand terracotta wash */
+@keyframes creativity-gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.creativity-gradient {
+  color: transparent;
+  background-image: linear-gradient(
+    110deg,
+    #3d2a22 0%,
+    #a8532e 28%,
+    #d4895a 48%,
+    #f3ebe0 58%,
+    #a8532e 72%,
+    #8f4324 100%
+  );
+  background-size: 220% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  animation: creativity-gradient-shift 4.5s ease-in-out infinite;
+  will-change: background-position;
+}
+
+/* Prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .animate-sheen {
+    animation: none;
+  }
+
+  .creativity-gradient {
+    animation: none;
+    color: var(--color-terracotta);
+    background-image: none;
+  }
+}
+
+/* Lock scroll while intro loader is active */
+html.loader-active {
+  overflow: hidden !important;
+  height: 100%;
+  overscroll-behavior: none;
+}
+
+html.loader-active body {
+  overflow: hidden !important;
+  overscroll-behavior: none;
+  touch-action: none;
+}
+
+/* After loader, allow native touch scroll (esp. mobile) */
+html:not(.loader-active),
+html:not(.loader-active) body {
+  touch-action: pan-y;
+  overscroll-behavior-y: auto;
+}
+
+/*
+ * Sequential pin stacking — earlier page sections sit ABOVE later ones.
+ * While a section is ScrollTrigger-pinned (position: fixed), the next
+ * section would otherwise paint over it (later DOM sibling). Descending
+ * z-index on each <section> keeps the active pin on top until its
+ * spacer has been scrolled through.
+ */
+main {
+  position: relative;
+  z-index: 1;
+  max-width: 100%;
+}
+
+/*
+ * Hero V2 title placement — tweak these values to pin the headline
+ * to a specific spot on hero-v2.png (percent of the section).
+ */
+.hero-v2-title {
+  position: absolute;
+  top: 48%;
+  left: 42%;
+  z-index: 2;
+  width: max-content;
+  max-width: min(20rem, 90vw);
+  margin: 0;
+  translate: -50% -50%;
+  text-align: left;
+  color: #f3ebe0;
+  font-family: var(--font-space-mono), ui-monospace, monospace;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  pointer-events: none;
+}
+
+@media (max-width: 767px) {
+  .hero-v2-title {
+    top: 50%;
+    left: 24%;
+  }
+}
