@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "postbuild": "node -e \"const fs=require('fs');['out/images/works/_raw','out/images/works/_dl'].forEach((p)=>fs.rmSync(p,{recursive:true,force:true}));\"",
+    "postbuild": "node scripts/cf-build.cjs --clean-only",
+    "postinstall": "node scripts/cf-build.cjs",
     "start": "wrangler dev",
     "lint": "next lint",
     "preview": "npm run build && wrangler dev",
