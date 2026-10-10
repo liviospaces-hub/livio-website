@@ -7,6 +7,7 @@ import { usePathname } from "next/navigation";
 import { ArrowUpRight, Menu, X } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
 import { cn } from "@/lib/utils";
+import { CONTACT_EMAIL, CONTACT_PHONES } from "@/lib/contact";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -206,7 +207,29 @@ export function Header() {
                 initial={{ opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.35 }}
+                className="space-y-6"
               >
+                <div className="space-y-3 border-t border-terracotta/15 pt-6">
+                  <a
+                    href={`mailto:${CONTACT_EMAIL}`}
+                    className="block font-display text-base font-semibold tracking-[-0.02em] text-terracotta-deep"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {CONTACT_EMAIL}
+                  </a>
+                  <div className="flex flex-col gap-1.5">
+                    {CONTACT_PHONES.map((phone) => (
+                      <a
+                        key={phone.href}
+                        href={phone.href}
+                        className="font-display text-base font-semibold tracking-[-0.02em] text-terracotta"
+                        onClick={() => setIsOpen(false)}
+                      >
+                        {phone.display}
+                      </a>
+                    ))}
+                  </div>
+                </div>
                 <CtaButton
                   scrolled
                   className="w-full justify-center"

@@ -31,9 +31,14 @@ yarn-error.log*
 # vercel
 .vercel
 
+# cloudflare
+.wrangler
+.dev.vars
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts
 
 # raw Drive downloads (optimized copies live in public/images/works/*)
 /public/images/works/_raw/
+/public/images/works/_dl/

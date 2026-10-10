@@ -2,6 +2,7 @@
 
 import { FormEvent, useState } from "react";
 import { ArrowUpRight } from "lucide-react";
+import { CONTACT_EMAIL, CONTACT_PHONES } from "@/lib/contact";
 
 const PROJECT_TYPES = [
   "Architecture and engineering",
@@ -38,7 +39,7 @@ export function Contact() {
         .join("\n")
     );
 
-    window.location.href = `mailto:hello@liviospaces.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`;
     setSent(true);
   };
 
@@ -67,12 +68,29 @@ export function Contact() {
                 Email
               </p>
               <a
-                href="mailto:hello@liviospaces.com"
+                href={`mailto:${CONTACT_EMAIL}`}
                 className="group inline-flex items-center gap-2 font-display text-xl font-semibold tracking-[-0.02em] text-terracotta transition-colors hover:text-terracotta-deep"
               >
-                hello@liviospaces.com
+                {CONTACT_EMAIL}
                 <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
               </a>
+            </div>
+            <div>
+              <p className="mb-1.5 font-mono text-[0.65rem] uppercase tracking-[0.18em] text-ink/40">
+                Phone
+              </p>
+              <div className="flex flex-col gap-2">
+                {CONTACT_PHONES.map((phone) => (
+                  <a
+                    key={phone.href}
+                    href={phone.href}
+                    className="group inline-flex items-center gap-2 font-display text-xl font-semibold tracking-[-0.02em] text-terracotta transition-colors hover:text-terracotta-deep"
+                  >
+                    {phone.display}
+                    <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+                  </a>
+                ))}
+              </div>
             </div>
           </div>
         </div>

@@ -5,6 +5,7 @@ import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { gsap, ScrollTrigger } from "@/lib/gsap";
 import { LivioSpacesLogo } from "@/components/brand/LivioSpacesLogo";
+import { CONTACT_EMAIL, CONTACT_PHONES } from "@/lib/contact";
 
 const EXPLORE = [
   { href: "/about", label: "About" },
@@ -211,12 +212,23 @@ export function Footer() {
               Start a project
             </p>
             <a
-              href="mailto:hello@liviospaces.com"
+              href={`mailto:${CONTACT_EMAIL}`}
               className="group inline-flex items-start gap-3 font-display text-2xl font-bold tracking-[-0.03em] text-cream-soft transition-colors hover:text-white sm:text-3xl"
             >
-              hello@liviospaces.com
+              {CONTACT_EMAIL}
               <ArrowUpRight className="mt-1 h-5 w-5 shrink-0 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
             </a>
+            <div className="mt-4 flex flex-col gap-1.5">
+              {CONTACT_PHONES.map((phone) => (
+                <a
+                  key={phone.href}
+                  href={phone.href}
+                  className="font-display text-lg font-semibold tracking-[-0.02em] text-cream-soft/80 transition-colors hover:text-cream-soft"
+                >
+                  {phone.display}
+                </a>
+              ))}
+            </div>
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-cream-soft/55">
               Tell us about your site, brief, or idea — we respond within a few
               days.

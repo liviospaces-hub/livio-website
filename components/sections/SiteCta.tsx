@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
+import { CONTACT_EMAIL } from "@/lib/contact";
 
 /** Full-width CTA band above the footer — content constrained to container */
 export function SiteCta() {
@@ -44,10 +45,10 @@ export function SiteCta() {
               />
             </Link>
             <a
-              href="mailto:hello@liviospaces.com"
+              href={`mailto:${CONTACT_EMAIL}`}
               className="inline-flex items-center gap-2 rounded-full border border-ink/15 px-5 py-3.5 font-mono text-[0.7rem] font-semibold uppercase tracking-[0.16em] text-ink/70 transition-colors hover:border-ink/30 hover:text-ink"
             >
-              hello@liviospaces.com
+              {CONTACT_EMAIL}
             </a>
           </div>
         </div>
