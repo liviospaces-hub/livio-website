@@ -6,13 +6,13 @@
     "dev": "next dev",
     "build": "next build",
     "postbuild": "node -e \"const fs=require('fs');['out/images/works/_raw','out/images/works/_dl'].forEach((p)=>fs.rmSync(p,{recursive:true,force:true}));\"",
-    "start": "wrangler pages dev out",
+    "start": "wrangler dev",
     "lint": "next lint",
-    "preview": "npm run build && wrangler pages dev out",
-    "deploy": "npm run build && wrangler pages deploy out"
+    "preview": "npm run build && wrangler dev",
+    "deploy": "npm run build && wrangler deploy"
   },
   "engines": {
-    "node": ">=18.17.0"
+    "node": ">=22.0.0"
   },
   "dependencies": {
     "clsx": "^2.1.1",
