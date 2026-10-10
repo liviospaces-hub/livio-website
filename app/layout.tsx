@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Outfit, Space_Mono } from "next/font/google";
+import localFont from "next/font/local";
 import { SmoothScrollProvider } from "@/providers/SmoothScrollProvider";
 import { Header } from "@/components/Header";
 import { PageLoader } from "@/components/PageLoader";
@@ -8,24 +8,35 @@ import { GsapRouteCleanup } from "@/components/GsapRouteCleanup";
 import { SiteCta } from "@/components/sections/SiteCta";
 import "./globals.css";
 
-const inter = Inter({
-  subsets: ["latin"],
+const inter = localFont({
+  src: "./fonts/inter-latin-wght-normal.woff2",
   variable: "--font-inter",
   display: "swap",
+  weight: "100 900",
 });
 
-const spaceMono = Space_Mono({
-  subsets: ["latin"],
+const spaceMono = localFont({
+  src: [
+    {
+      path: "./fonts/space-mono-latin-400-normal.woff2",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "./fonts/space-mono-latin-700-normal.woff2",
+      weight: "700",
+      style: "normal",
+    },
+  ],
   variable: "--font-space-mono",
   display: "swap",
-  weight: ["400", "700"],
 });
 
-const outfit = Outfit({
-  subsets: ["latin"],
+const outfit = localFont({
+  src: "./fonts/outfit-latin-wght-normal.woff2",
   variable: "--font-outfit",
   display: "swap",
-  weight: ["300", "400", "500", "600"],
+  weight: "100 900",
 });
 
 export const metadata: Metadata = {

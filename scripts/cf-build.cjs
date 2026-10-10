@@ -3,6 +3,7 @@ const fs = require("fs");
 const path = require("path");
 
 const root = path.join(__dirname, "..");
+const MAX_ATTEMPTS = 3;
 
 function cleanExport() {
   for (const rel of ["out/images/works/_raw", "out/images/works/_dl"]) {
@@ -10,10 +11,34 @@ function cleanExport() {
   }
 }
 
-function build() {
+function buildOnce() {
   const nextBin = require.resolve("next/dist/bin/next");
-  execSync(`node "${nextBin}" build`, { stdio: "inherit", cwd: root });
+  execSync(`node "${nextBin}" build`, {
+    stdio: "inherit",
+    cwd: root,
+    env: {
+      ...process.env,
+      NEXT_TELEMETRY_DISABLED: "1",
+    },
+  });
   cleanExport();
+}
+
+function build() {
+  let lastError;
+  for (let attempt = 1; attempt <= MAX_ATTEMPTS; attempt += 1) {
+    try {
+      buildOnce();
+      return;
+    } catch (error) {
+      lastError = error;
+      console.error(`Next.js build failed (attempt ${attempt}/${MAX_ATTEMPTS}).`);
+      if (attempt < MAX_ATTEMPTS) {
+        console.error("Retrying...");
+      }
+    }
+  }
+  throw lastError;
 }
 
 const onCloudflare =
