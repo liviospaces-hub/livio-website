@@ -42,6 +42,11 @@ const outfit = localFont({
 export const metadata: Metadata = {
   title: "Livio Spaces — Architecture | Interiors | Design",
   description: "Shaping for the future. Architecture, interiors, and design.",
+  icons: {
+    icon: [{ url: "/favicon.svg", type: "image/svg+xml" }],
+    shortcut: "/favicon.svg",
+    apple: "/favicon.svg",
+  },
 };
 
 export default function RootLayout({
